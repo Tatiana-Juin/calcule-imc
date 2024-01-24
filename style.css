@@ -27,6 +27,7 @@ main{
     /* justify-content: center; */
     align-items: center;
 }
+
 /* FORMULAIRE */
 form{
     display: flex;
@@ -35,15 +36,16 @@ form{
     margin-top:15px;
 }
 
+/* LABEL */
 label{
     font-size: 20px;;
 }
-
+/* POUR LES LABEL ET CHAMPS DE SAISIE  */
 label,input{
     margin-bottom: 10px;
 }
 
-/* COULEURS DES CHAMPS */
+/* STYLE POUR TOUS LES CHAMPS DE TEXTE   */
 #age,#taille,#poids{
     background-color: var(--couleurChamps);
     border:none;
@@ -51,12 +53,12 @@ label,input{
     height: 30px;;
 
 }
-
+/* STYLE POUR LE DERNIER CHAMPS DE TEXTE */
 #poids{
     margin-bottom:20px ;
 }
 
-/* BOUTON ENVOYER */
+/* STYLE POUR LE  BOUTON ENVOYER */
 .btn{
     background-color: var(--couleurRose);
     font-weight: bolder;
