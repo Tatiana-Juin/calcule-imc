@@ -1,0 +1,32 @@
+/* RESET */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+/* DECLARIATION DES VARIABLES  */
+:root{
+    --couleurRose : #ECA4A6;
+    --texteBtn : #ffff;
+    --couleurChamps: #F5F5F5;
+}
+
+
+
+
+
+
+
+/* COULEURS DES CHAMPS */
+#age,#taille,#poids{
+    background-color: var(--couleurChamps);
+    border:none;
+
+}
+
+
+
+
+
