@@ -13,13 +13,6 @@
     --couleurChamps: #F5F5F5;
 }
 
-/* TITRE */
-h1{
-    color:var(--couleurRose);
-    font-size: 40px;
-    margin-top: 25px;
-}
-
 /* MAIN */
 main{
     display: flex;
@@ -28,6 +21,21 @@ main{
     align-items: center;
     
 }
+
+/* TITRE */
+h1{
+    color:var(--couleurRose);
+    font-size: 40px;
+    margin-top: 25px;
+}
+
+.erreur{
+    font-size: 20px;
+    color:red;
+    font-weight: bolder;
+}
+
+
 
 /* FORMULAIRE */
 form{
