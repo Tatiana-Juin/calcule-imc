@@ -5,3 +5,8 @@ let poids = document.getElementById("poids");
 let btn = document.querySelector(".btn");
 let reponse = document.querySelector(".reponse");
 
+// Evenement au click 
+btn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    
+})
