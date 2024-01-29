@@ -32,7 +32,7 @@ function verification(valAge, valTailleCm, valPoids) {
             erreur.innerText = "Attention il ne doit pas avoir de point ";
         }
         else {
-
+        
             // NB NEGATIF
             if (valAge <= 0 || valTailleCm <= 0 || valPoids <= 0) {
                 erreur.innerText = "Attention il ne doit pas avoir de nb négatif";
@@ -45,9 +45,15 @@ function verification(valAge, valTailleCm, valPoids) {
                 }
                 else{
 
-
-                    // POIDS 
                     
+                    // POIDS 
+                    if(valPoids > 250 || valPoids.length<2 || valPoids.length > 4){
+                        erreur.innerText = "Le poids doit contenir 2 a 3 chiffre et ne pas etre supérieur a 250kg";
+                    }
+                    else{
+                        erreur.innerHTML="";
+                        calculeImc(valAge,valTailleCm,valPoids);
+                    }
                 }
             }
         }
