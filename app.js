@@ -21,90 +21,50 @@ btn.addEventListener("click",(e)=>{
 
 // FONCTION POUR EFFECTUER LES VERIFICATION
 function verification(valAge, valTailleCm, valPoids) {
+    // REGEX POUR AUTORISER QUE LES CHIFFRES
+    let regexNumeric = /^[0-9]+$/;
+    // TABLEAU POUR CONTENIR LES MESSAGES ERREURS
+    let messageErreurs=[];
+  
+    //TOUS LES CHAMPS REMPLI 
+   if (valAge !== "" && valTailleCm !== "" && valPoids !== ""){
 
-    let regexPoint = /^[^,.]*$/;
-
-    // TOUS LES CHAMPS SONT REMPLI 
-    if (valAge !== "" && valTailleCm !== "" && valPoids !== "") {
-
-        // POUR LES POINTS 
-        if (!regexPoint.test(valAge) || !regexPoint.test(valTailleCm) || !regexPoint.test(valPoids)) {
-            erreur.innerText = "Attention il ne doit pas avoir de point ";
-        }
-        else {
-        
-            // NB NEGATIF
-            if (valAge <= 0 || valTailleCm <= 0 || valPoids <= 0) {
-                erreur.innerText = "Attention il ne doit pas avoir de nb négatif";
-            }
-            else {
-                
-                // TAILLE
-                if(valTailleCm !== 3 || valTailleCm > 250){
-                    erreur.innerText = "La taille doit contenir 3 chiffre et ne pas etre supérieur a 250cm";
-                }
-                else{
-
-                    
-                    // POIDS 
-                    if(valPoids > 250 || valPoids.length<2 || valPoids.length > 4){
-                        erreur.innerText = "Le poids doit contenir 2 a 3 chiffre et ne pas etre supérieur a 250kg";
-                    }
-                    else{
-                        erreur.innerHTML="";
-                        calculeImc(valAge,valTailleCm,valPoids);
-                    }
-                }
-            }
+        // NB NEGATIF , POINT
+        if (!regexNumeric.test(valAge) || !regexNumeric.test(valTailleCm) || !regexNumeric.test(valPoids)){
+            messageErreurs.push("Seule les chiffre sont autorisé");
         }
 
-    }
-    else {
-        erreur.innerText = "Tous les champs doivent etre rempli";
-    }
-
-    /* 
-    
-         if(valAge!='' && valTailleCm!='' && valPoids!=''){
-       
-        // IL N'Y A PAS DE CHIFFRE NEGATIF
-        if (valAge >0 && valTailleCm > 0 && valPoids>0) {
-            
-            // ON VERIFIE QUE LA TAILLE CONTIENT TROIS CHIFFRE  
-            if(valTailleCm.length ===3 && valPoids.length > 1 && valPoids.length <4){
-                // console.log("super");
-    
-                // AUCUN POINT 
-                if(regexPoint.test(valAge) && regexPoint.test(valTailleCm) && regexPoint.test(valPoids) ){
-                    erreur.innerText="";
-    
-                    // APPELLE DE LA FONCTION calculeImc
-                    calculeImc(valAge,valTailleCm,valPoids);
-                }
-                // IL A UN POINT 
-                else{ 
-                    erreur.innerText="Il ne doit pas avoir de point";
-                }
-            }
-            // ERREUR POUR LA TAILLE ET LE POIDS 
-            else{
-                // console.log("erreur 3 nb pour la taille et 2 chiffre minimum pour le poids");
-                erreur.innerHTML="erreur 3 nb pour la taille <br> 2 chiffre minimum pour le poids"
-            }
+        // TAILLE
+        if(valTailleCm.length !== 3 ){
+            messageErreurs.push("Taille: 3 chiffre");
         }
-        // LES CHAMPS NE DOIVENT PAS ETRE NEGATIF 
+
+        if( valTailleCm > 250){
+            messageErreurs.push("Trop grand - taille maximum 250cm");
+        }
+
+        // POIDS 
+        if(valPoids > 250){
+            messageErreurs.push(" Poids max 250kg");
+        }
+
+        if(valPoids.length<2 || valPoids.length > 4){
+            messageErreurs.push("Poids - 2 a 3 chiffre max");
+        }
+
+        // POUR AFFICHER LES MESSAGE D'ERREURS 
+        if(messageErreurs.length > 0){
+            erreur.innerHTML = "<ul><li>" + messageErreurs.join("</li><li>") + "</li></ul>";
+        }
+
         else{
-            erreur.innerText="Les chiffre ne doivent pas etre negatif";
-        }   
+            erreur.innerHTML="";
+            calculeImc(valAge,valTailleCm,valPoids);
+        }
 
-    }
-    // TOUS LES CHAMPS  NE SONT PAS REMPLI 
-    else{
-        
-        erreur.innerText="Tous les champs ne sont pas rempli";
-    }
-
-    */
+   }else{
+        erreur.innerText = "Tous les champs doivent etre rempli";
+   }
 }
 
 function calculeImc(valAge,valTailleCm,valPoids){
