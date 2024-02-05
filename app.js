@@ -68,11 +68,12 @@ function verification(valAge, valTailleCm, valPoids) {
 }
 
 function calculeImc(valAge,valTailleCm,valPoids){
-    // console.log("dans la fonction");
+    // POUR CALCULER IMC 
     let valTaille = valTailleCm / 100;
-    // console.log(valTaille);
     let tailleCarre = valTaille * valTaille;
-    // console.log(tailleCarre);
     let imc = valPoids / tailleCarre;
-   reponse.innerHTML = `Ton IMC est de ${imc}`
+    // POUR ARRONDIR A 2 CHIFFRE APRES LA VIRGULE 
+    let arrondirImc = Math.round(imc*100) /100
+    // AFFICHE IMC 
+   reponse.innerHTML = `Ton IMC est de ${arrondirImc}`
 }
