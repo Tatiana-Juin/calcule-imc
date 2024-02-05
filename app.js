@@ -5,6 +5,7 @@ let taille = document.getElementById("taille");
 let poids = document.getElementById("poids");
 let btn = document.querySelector(".btn");
 let reponse = document.querySelector(".reponse");
+let main = document.querySelector("main");
 
 btn.addEventListener("click",(e)=>{
     e.preventDefault();
@@ -54,16 +55,17 @@ function verification(valAge, valTailleCm, valPoids) {
 
         // POUR AFFICHER LES MESSAGE D'ERREURS 
         if(messageErreurs.length > 0){
-            erreur.innerHTML = "<ul><li>" + messageErreurs.join("</li><li>") + "</li></ul>";
+            return erreur.innerHTML = "<ul><li>" + messageErreurs.join("</li><li>") + "</li></ul>";
         }
-
         else{
+            // pas de message erreur
             erreur.innerHTML="";
-            calculeImc(valAge,valTailleCm,valPoids);
+            // APPELLE DE LA FONCTION calculeImc avec 3 arguments 
+           return calculeImc(valAge,valTailleCm,valPoids);
         }
 
    }else{
-        erreur.innerText = "Tous les champs doivent etre rempli";
+       return  erreur.innerText = "Tous les champs doivent etre rempli";
    }
 }
 
@@ -74,6 +76,33 @@ function calculeImc(valAge,valTailleCm,valPoids){
     let imc = valPoids / tailleCarre;
     // POUR ARRONDIR A 2 CHIFFRE APRES LA VIRGULE 
     let arrondirImc = Math.round(imc*100) /100
-    // AFFICHE IMC 
-   reponse.innerHTML = `Ton IMC est de ${arrondirImc}`
+    
+    // IMC INFERIEUR A 18.5
+    if(arrondirImc < 18.5){
+        return reponse.innerHTML = `Ton IMC est de ${arrondirImc} : Tu es en insuffisance pondérale. Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`
+    } else{ 
+        // ENTRE 18.5 ET 25
+        if( arrondirImc >=18.5 && arrondirImc<25){
+            return  reponse.innerHTML = `Tu as ${valAge} <br> Ton IMC est de ${arrondirImc} : Ton IMC est normal`
+        } else{
+            // ENTRE 25 ET 30
+            if(arrondirImc >=25 && arrondirImc <30){
+                return reponse.innerHTML = ` Ton IMC est de ${arrondirImc} : surpoids.`
+            }else{
+                // ENTRE 30 et 35
+                if(arrondirImc >=30 && arrondirImc <35){
+                    return reponse.innerHTML = ` Ton IMC est de ${arrondirImc} : obésité modérée`
+                }
+                else{
+                    // ENTRE 35 ET 40
+                    if(arrondirImc >=35 && arrondirImc <40){
+                        return reponse.innerHTML = ` Ton IMC est de ${arrondirImc} : obésité sevére`
+                    }else{
+                        // SUPERIEUR OU EGALE A 40
+                        return reponse.innerHTML = ` Ton IMC est de ${arrondirImc} : obésité massive ou morbide`
+                    }
+                }
+            }
+        }
+    }
 }

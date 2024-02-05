@@ -28,10 +28,9 @@ Si ce n'es pas le cas il faudra mettre un message disant que IMC est falcutatif 
 ## enpecher les point avec un regex
 
 # TABLEAU POUR IMC 
--  -18,5 : insuffisance pondérale, comprenez "maigre"
--  entre 18,5 et 24,9 : normal
--  entre 25 et 29,9 :  surpoids 
-- supérieur à 30 : situation d'obésité
+-  -18,5 : insuffisance pondérale, comprenez "maigre" . Il faut en discuter avec votre medecin pour verifier que vous n'avez pas de pb de santé.
+-  entre 18,5 et 25 : normal
+-  entre 25 et 30 :  surpoids 
 - entre 30 et 34,9: l'obésité est "modérée"
 - entre 35 et 39,9: l'obésité est "sévère"
 - au-dessus de 40, l'obésité est "massive"
