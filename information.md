@@ -34,3 +34,24 @@ Si ce n'es pas le cas il faudra mettre un message disant que IMC est falcutatif 
 - entre 30 et 34,9: l'obésité est "modérée"
 - entre 35 et 39,9: l'obésité est "sévère"
 - au-dessus de 40, l'obésité est "massive"
+
+# A faire 
+- Enlever age car on ne l'utilise pas 
+- Design de la réponse pour IMC . 
+
+# Pour le design de IMC 
+- Remplacer le p de la class réponse par une div  
+- Avant les condition creer un element p avec une class 
+    ````
+    let pRep = document.createElement("p") ;
+    pRep.setAttribute("class","rep");
+    
+    ````
+- Enlever les return  
+     ````
+    pRep.innerText = ``;
+    ````    
+- Après toutes les conditions 
+    ````
+    reponse.appendChild("pRep")
+    ````

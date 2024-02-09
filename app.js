@@ -76,6 +76,7 @@ function calculeImc(valAge,valTailleCm,valPoids){
     // POUR ARRONDIR A 2 CHIFFRE APRES LA VIRGULE 
     let arrondirImc = Math.round(imc*100) /100;
     
+
     // IMC INFERIEUR A 18.5
     if(arrondirImc < 18.5){
         return reponse.innerHTML = ` IMC: ${arrondirImc} :  insuffisance pondérale. Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`;
@@ -105,3 +106,4 @@ function calculeImc(valAge,valTailleCm,valPoids){
         }
     }
 }
+
