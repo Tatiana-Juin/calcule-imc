@@ -79,27 +79,27 @@ function calculeImc(valAge,valTailleCm,valPoids){
 
     // IMC INFERIEUR A 18.5
     if(arrondirImc < 18.5){
-        return reponse.innerHTML = ` <span class="imc">IMC: ${arrondirImc} </span> <br>  insuffisance pondérale. Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`;
+        return reponse.innerHTML = ` <span class="imc">IMC: ${arrondirImc} insuffisance pondérale </span> <br><br> Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`;
     } else{ 
         // ENTRE 18.5 ET 25
         if( arrondirImc >=18.5 && arrondirImc<25){
-            return  reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} </span> <br>Normal : Continue comme ca ton poids est normal tttttttttttttttttttttttttttttttttttttttt`;
+            return  reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} : Normal</span> <br> `;
         } else{
             // ENTRE 25 ET 30
             if(arrondirImc >=25 && arrondirImc <30){
-                return reponse.innerHTML = `IMC :  ${arrondirImc} : surpoids`;
+                return reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} : surpoids </span>`;
             }else{
                 // ENTRE 30 et 35
                 if(arrondirImc >=30 && arrondirImc <35){
-                    return reponse.innerHTML = `IMC : ${arrondirImc} : obésité modérée`
+                    return reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} :obésité modérée </span>`
                 }
                 else{
                     // ENTRE 35 ET 40
                     if(arrondirImc >=35 && arrondirImc <40){
-                        return reponse.innerHTML = `  IMC : ${arrondirImc} : obésité sevére`
+                        return reponse.innerHTML = ` <span class="imc">IMC: ${arrondirImc} : obésité sevére </span>`
                     }else{
                         // SUPERIEUR OU EGALE A 40
-                        return reponse.innerHTML = `IMC : ${arrondirImc} : obésité massive ou morbide`
+                        return reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} : obésité massive ou morbide </span>`
                     }
                 }
             }

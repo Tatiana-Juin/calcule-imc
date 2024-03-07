@@ -85,6 +85,7 @@ label,input{
 .reponse{
     margin-top: 25px;
     text-align: center;
+    font-size: 18px;
 }
 /* IMC */
 .imc{
@@ -93,3 +94,19 @@ label,input{
 }
 
 /* MEDIA SCREEN */
+@media screen and (min-width:900px) and (max-width:1200px){
+    body{
+        background-color: red;
+    }
+
+    .imc{
+        font-size: 25px;
+       
+    }
+
+    .reponse{
+        border: 1px solid yellow;
+        margin: 0 20px;
+        /* text-align: unset; */
+    }
+}
