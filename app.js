@@ -79,7 +79,7 @@ function calculeImc(valAge,valTailleCm,valPoids){
 
     // IMC INFERIEUR A 18.5
     if(arrondirImc < 18.5){
-        return reponse.innerHTML = ` IMC: ${arrondirImc} :  insuffisance pondérale. Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`;
+        return reponse.innerHTML = ` <span class="imc">IMC: ${arrondirImc} </span> <br>  insuffisance pondérale. Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`;
     } else{ 
         // ENTRE 18.5 ET 25
         if( arrondirImc >=18.5 && arrondirImc<25){
