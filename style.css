@@ -84,10 +84,10 @@ label,input{
 /* POUR AFFICHER LE RESULTAT DE  IMC */
 .reponse{
     margin-top: 25px;
+    text-align: center;
 }
-
+/* IMC */
 .imc{
-    text-align: center !important;
     font-weight: bolder;
     font-size: 30px;
 }

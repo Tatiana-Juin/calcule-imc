@@ -83,7 +83,7 @@ function calculeImc(valAge,valTailleCm,valPoids){
     } else{ 
         // ENTRE 18.5 ET 25
         if( arrondirImc >=18.5 && arrondirImc<25){
-            return  reponse.innerHTML = `IMC : ${arrondirImc} : Normal`;
+            return  reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} </span> <br>Normal : Continue comme ca ton poids est normal tttttttttttttttttttttttttttttttttttttttt`;
         } else{
             // ENTRE 25 ET 30
             if(arrondirImc >=25 && arrondirImc <30){
