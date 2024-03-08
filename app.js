@@ -4,7 +4,9 @@ let age = document.getElementById("age");
 let taille = document.getElementById("taille");
 let poids = document.getElementById("poids");
 let btn = document.querySelector(".btn");
-let reponse = document.querySelector(".reponse");
+// let reponse = document.querySelector(".reponse");
+let imcAffiche = document.querySelector(".imc");
+let information = document.querySelector(".information");
 
 btn.addEventListener("click",(e)=>{
     e.preventDefault();
@@ -76,30 +78,39 @@ function calculeImc(valAge,valTailleCm,valPoids){
     // POUR ARRONDIR A 2 CHIFFRE APRES LA VIRGULE 
     let arrondirImc = Math.round(imc*100) /100;
     
+    
 
     // IMC INFERIEUR A 18.5
     if(arrondirImc < 18.5){
-        return reponse.innerHTML = ` <span class="imc">IMC: ${arrondirImc} insuffisance pondérale </span> <br><br> Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`;
+        imcAffiche.innerHTML = ` IMC: ${arrondirImc} insuffisance pondérale  `;
+         information.innerHTML=` Ton poids est trop bas par rapport a votre taille. Aller voir votre medecin pour vérifier si bous n'avez pas de problème de santé .`
+        
+
     } else{ 
         // ENTRE 18.5 ET 25
         if( arrondirImc >=18.5 && arrondirImc<25){
-            return  reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} : Normal</span> <br> `;
+              imcAffiche.innerHTML = `IMC: ${arrondirImc} : Normal `;
+              information.innerHTML=`Continue comme ça ton poids est idéale par rapport a ta taille`
         } else{
             // ENTRE 25 ET 30
             if(arrondirImc >=25 && arrondirImc <30){
-                return reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} : surpoids </span>`;
+                 imcAffiche.innerHTML = `IMC: ${arrondirImc} : surpoids `;
+                 information.innerHTML=`Attention tu es en surpoids . Il faut que que tu fasse attention. Equillibre ton alimentation.Tu risque d'avoir des problème de santé`
             }else{
                 // ENTRE 30 et 35
                 if(arrondirImc >=30 && arrondirImc <35){
-                    return reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} :obésité modérée </span>`
+                    imcAffiche.innerHTML = `IMC: ${arrondirImc} :obésité modérée`
+                    information.innerHTML=`Tu es en obésidité modéré . Il faut équilibré ton alimentation car tu risque des problème de santé important`
                 }
                 else{
                     // ENTRE 35 ET 40
                     if(arrondirImc >=35 && arrondirImc <40){
-                        return reponse.innerHTML = ` <span class="imc">IMC: ${arrondirImc} : obésité sevére </span>`
+                        imcAffiche.innerHTML = `IMC: ${arrondirImc} : obésité sevére `
+                        information.innerHTML=`Tu es en obésité sévére . A long terme tu peux avoir de grave problème de santé. Je te conseille d'aller consulter ton médecin.`
                     }else{
                         // SUPERIEUR OU EGALE A 40
-                        return reponse.innerHTML = `<span class="imc">IMC: ${arrondirImc} : obésité massive ou morbide </span>`
+                        imcAffiche.innerHTML = `IMC: ${arrondirImc} : obésité massive ou morbide `
+                        information.innerHTML=`Tu en obésiter massive . Va consulter ton médécin pour qu'il te donne des conseille .Si tu reste dans cette situation tu risque de grave problème de santé `
                     }
                 }
             }
