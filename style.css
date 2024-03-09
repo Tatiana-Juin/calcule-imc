@@ -81,10 +81,11 @@ label,input{
     margin: auto;
 }
 
-/* POUR AFFICHER LE RESULTAT DE  IMC */
+/* DIV POUR LA REPONSE */
 .reponse{
     margin-top: 25px;
     width:50vw;
+    margin-bottom : 15px;
 }
 
 /* IMC */

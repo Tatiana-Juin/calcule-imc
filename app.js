@@ -1,6 +1,5 @@
 // ELEMENT SELECTIONNER DU DOM 
 let erreur = document.querySelector(".erreur");
-let age = document.getElementById("age");
 let taille = document.getElementById("taille");
 let poids = document.getElementById("poids");
 let btn = document.querySelector(".btn");
@@ -11,28 +10,27 @@ let information = document.querySelector(".information");
 btn.addEventListener("click",(e)=>{
     e.preventDefault();
     // RECUPERE LA VALEUR SAISIE PAR L'UTILISATEUR 
-   let valAge = age.value.trim();
    let valTailleCm = taille.value.trim();
    let valPoids = poids.value.trim();
 
     // Appelle de la fonction pour les verifications
-   verification(valAge,valTailleCm,valPoids);
+   verification(valTailleCm,valPoids);
 
 
 })
 
 // FONCTION POUR EFFECTUER LES VERIFICATION
-function verification(valAge, valTailleCm, valPoids) {
+function verification( valTailleCm, valPoids) {
     // REGEX POUR AUTORISER QUE LES CHIFFRES
     let regexNumeric = /^[0-9]+$/;
     // TABLEAU POUR CONTENIR LES MESSAGES ERREURS
     let messageErreurs=[];
   
     //TOUS LES CHAMPS REMPLI 
-   if (valAge !== "" && valTailleCm !== "" && valPoids !== ""){
+   if ( valTailleCm !== "" && valPoids !== ""){
 
         // NB NEGATIF , POINT
-        if (!regexNumeric.test(valAge) || !regexNumeric.test(valTailleCm) || !regexNumeric.test(valPoids)){
+        if ( !regexNumeric.test(valTailleCm) || !regexNumeric.test(valPoids)){
             messageErreurs.push("Seule les chiffre sont autorisé");
         }
 
@@ -62,7 +60,7 @@ function verification(valAge, valTailleCm, valPoids) {
             // pas de message erreur
             erreur.innerHTML="";
             // APPELLE DE LA FONCTION calculeImc avec 3 arguments 
-           return calculeImc(valAge,valTailleCm,valPoids);
+           return calculeImc(valTailleCm,valPoids);
         }
 
    }else{
@@ -70,7 +68,7 @@ function verification(valAge, valTailleCm, valPoids) {
    }
 }
 
-function calculeImc(valAge,valTailleCm,valPoids){
+function calculeImc(valTailleCm,valPoids){
     // POUR CALCULER IMC 
     let valTaille = valTailleCm / 100;
     let tailleCarre = valTaille * valTaille;
