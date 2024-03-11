@@ -106,3 +106,39 @@ label,input{
     margin-top: 10px;
     text-align: justify;
 }
+
+/* RESPONSIVE*/
+@media screen and (min-width:550px)  {
+
+    main{
+        margin: 0;
+         display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        /* border:1px solid blue; */
+    }
+
+    h1{
+        font-size:40px;
+    }
+
+    form{
+        align-items: flex-start;
+    }
+
+    #taille,#poids{
+        width: 400px;
+    }
+
+    .reponse{
+        width:40vw;
+        border: 1px solid red;
+    }
+
+    .imc{
+        text-align: center;
+    }
+
+    
+}
