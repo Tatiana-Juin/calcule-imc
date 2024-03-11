@@ -3,7 +3,6 @@ let erreur = document.querySelector(".erreur");
 let taille = document.getElementById("taille");
 let poids = document.getElementById("poids");
 let btn = document.querySelector(".btn");
-// let reponse = document.querySelector(".reponse");
 let imcAffiche = document.querySelector(".imc");
 let information = document.querySelector(".information");
 
