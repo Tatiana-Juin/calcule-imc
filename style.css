@@ -15,10 +15,7 @@
 
 /* MAIN */
 main{
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+  
     margin:0 20px;
     
 }
@@ -26,7 +23,7 @@ main{
 /* TITRE */
 h1{
     color:var(--couleurRose);
-    /* font-size: 40px; */
+   
     margin-top: 25px;
     font-size: 25px;
     text-align: center;
@@ -34,7 +31,7 @@ h1{
 
 /* POUR AFFICHER LE MESSAGE ERREUR  */
 .erreur{
-    /* font-size: 20px; */
+   
     font-size: 20px;
     color:red;
     font-weight: bolder;
@@ -45,14 +42,14 @@ h1{
 form{
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
+    
     margin-top:15px;
     /* border:1px solid blue; */
 }
 
 /* LABEL */
 label{
-    /* font-size: 20px;; */
+   
     font-size: 20px;
 }
 
@@ -65,7 +62,7 @@ label,input{
 #taille,#poids{
     background-color: var(--couleurChamps);
     border:none;
-    /* width: 400px; */
+    
     height: 30px;
    
 }
