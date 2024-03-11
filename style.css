@@ -133,7 +133,7 @@ label,input{
 
     .reponse{
         width:40vw;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .imc{
